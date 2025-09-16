@@ -1,0 +1,3782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misk'i Dátil - Dulzura Natural de la Tierra</title>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="preload" href="images/ings.jpeg" as="image">
+    <link rel="preload" href="images/logo.jpeg" as="image">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #faf8f5 0%, #f0ebe4 50%, #e8ddd4 100%);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typography improvements */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Elegant accent font for special text */
+        .accent-font {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #D2691E 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            padding: 0.8rem 0;
+            background: rgba(139, 69, 19, 0.95);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            width: 120px;
+            height: auto;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #fff, #f4e4bc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #FFD700;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(139, 69, 19, 0.95);
+                padding: 1rem 0;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .login-form {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .login-form.active {
+            display: block;
+        }
+
+        .login-form input {
+            display: block;
+            width: 200px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 0.5rem;
+            background: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background: #D2691E;
+        }
+
+        .welcome-message {
+            display: none;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .cart-icon, .user-icon {
+            position: relative;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-icon:hover, .user-icon:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #FF4500;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(210, 105, 30, 0.7)), url('images/ings.jpeg');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7), 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1s ease-out, glow 2s ease-in-out infinite alternate;
+            letter-spacing: 3px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.7), 0 0 20px rgba(255, 255, 255, 0.3); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.7), 0 0 30px rgba(255, 255, 255, 0.5); }
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+            line-height: 1.8;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            font-weight: 400;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #8B4513;
+        }
+
+        .modal-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-section h3 {
+            color: #D2691E;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .modal-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .modal-section li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-section li::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #8B4513, #D2691E, #CD853F);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+            animation: fadeInUp 1s ease-out 0.9s both, pulse 2s infinite;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(45deg, #A0522D, #CD853F, #DEB887);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:active {
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FF6347, #D2691E);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            border-radius: 15px;
+            padding: 60px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-text h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #FFF8DC, #F5DEB3);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8B4513;
+            display: block;
+        }
+
+        /* Products Section */
+        .products {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(139, 69, 19, 0.1);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #8B4513, #D2691E, #CD853F);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(139, 69, 19, 0.25);
+            border-color: rgba(139, 69, 19, 0.3);
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.1), rgba(210, 105, 30, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-image-container::after {
+            opacity: 1;
+        }
+
+        .product-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-ingredients {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f9f5f0;
+            border-radius: 10px;
+        }
+
+        .product-ingredients h4 {
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .product-ingredients ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-ingredients li {
+            margin: 0.3rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-benefits {
+            margin: 1rem 0;
+        }
+
+        .product-benefits h4 {
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .product-benefits ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-benefits li {
+            margin: 0.5rem 0;
+            color: #666;
+            font-size: 0.9rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #D2691E;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            color: #8B4513;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+
+        .product-card:hover .product-title {
+            color: #D2691E;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #D2691E;
+            font-weight: 700;
+            margin: 1rem 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-price {
+            color: #8B4513;
+            transform: scale(1.05);
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #FF6347, #D2691E);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FF6347;
+            margin: 1rem 0;
+        }
+
+        .product-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .stars {
+            color: #FFD700;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .btn-add-cart {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .btn-add-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-add-cart:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+            background: linear-gradient(45deg, #A0522D, #CD853F);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-add-cart:hover::before {
+            left: 100%;
+        }
+
+        .btn-add-cart:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .btn-add-cart:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 50%, #DEB887 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .reviews .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding: 2rem 0;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .review-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B4513, #D2691E, #CD853F, #DEB887);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .review-card::after {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            color: rgba(139, 69, 19, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .review-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-avatar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .review-card:hover .review-avatar {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .review-card:hover .review-avatar::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .review-info h4 {
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.1rem;
+            display: flex;
+            gap: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-stars .star {
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+
+        .review-card:hover .review-stars .star {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 3px #FFD700);
+        }
+
+        .review-card p {
+            font-style: italic;
+            line-height: 1.7;
+            color: #555;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 1rem;
+            text-align: right;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            padding: 2rem 0;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.1), rgba(210, 105, 30, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .benefit-item:hover::before {
+            opacity: 1;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .benefit-item h3 {
+            color: #8B4513;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #FFF8DC, #F5DEB3);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #F5DEB3, #DEB887);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #8B4513;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(400px, 100%);
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .cart-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .cart-item {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item:hover {
+            transform: translateX(5px);
+        }
+
+        .cart-item-info {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .cart-item-price {
+            color: #D2691E;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quantity-btn {
+            background: #8B4513;
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #D2691E;
+            transform: scale(1.1);
+        }
+
+        .cart-header {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-content {
+            padding: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .cart-item-price {
+            color: #FF6347;
+            font-weight: bold;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .quantity-btn {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .cart-total {
+            background: linear-gradient(135deg, #FFF8DC, #F5DEB3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .payment-methods {
+            margin: 1rem 0;
+        }
+
+        .payment-methods h4 {
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option:hover {
+            background: #f0f0f0;
+        }
+
+        .payment-option input[type="radio"] {
+            margin: 0;
+        }
+
+        .payment-icon {
+            font-size: 1.2rem;
+        }
+
+        .cart-total h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF6347;
+        }
+
+        /* Auth Modal */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-modal.active {
+            display: flex;
+        }
+
+        .auth-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .auth-tab.active {
+            border-bottom-color: #FF6347;
+            color: #FF6347;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF6347;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contactPattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23contactPattern)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2), 0 15px 25px rgba(0,0,0,0.15);
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.8rem;
+            position: relative;
+        }
+
+        .form-group label {
+            color: #8B4513;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1.2rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            position: relative;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #D2691E;
+            box-shadow: 0 0 0 4px rgba(210, 105, 30, 0.15), 0 4px 12px rgba(210, 105, 30, 0.1);
+            outline: none;
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .form-group input:valid,
+        .form-group textarea:valid {
+            border-color: #28a745;
+        }
+
+        .form-group input:invalid:not(:placeholder-shown),
+        .form-group textarea:invalid:not(:placeholder-shown) {
+            border-color: #dc3545;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .form-error {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-error.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-success {
+            color: #28a745;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-success.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-form button {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-form button:hover {
+            background: linear-gradient(45deg, #D2691E, #8B4513);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .contact-form button:hover::before {
+            left: 100%;
+        }
+
+        .contact-form button:active {
+            transform: translateY(-1px);
+        }
+
+        .contact-form button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #8B4513;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .form-loading.show {
+            display: flex;
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e8e8e8;
+            border-top: 2px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-message.success {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .form-message.error {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            margin: 2rem 0;
+        }
+
+        .social-media {
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2C1810;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #FFD700;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax and scroll effects */
+        .hero {
+            will-change: transform;
+        }
+
+        .product-card, .review-card {
+            will-change: transform;
+            transition: transform 0.1s ease-out;
+        }
+
+        .stagger-animate {
+            animation: staggerFadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes staggerFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Simplified hover effects */
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Progress bar animation */
+        @keyframes progressGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        }
+
+        /* Simplified mobile optimizations */
+        .mobile-device .hero {
+            background-attachment: scroll !important;
+        }
+
+        /* Simple hover effects */
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Viewport height fix */
+        .hero {
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+        }
+
+        /* Improved tap targets for mobile */
+        @media (max-width: 767.98px) {
+            .btn, .btn-add-cart {
+                min-height: 44px;
+                padding: 12px 20px;
+            }
+
+            .form-control {
+                min-height: 44px;
+                font-size: 16px;
+            }
+        }
+
+        /* Simple image styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-slide-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-slide-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-scale.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Responsive Design - Mobile First Approach */
+        
+        /* Extra Small devices (phones, less than 576px) */
+        @media (max-width: 575.98px) {
+            .container {
+                padding: 0 0.75rem;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 0.5rem 0;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 70vh;
+                background-attachment: scroll; /* Better performance on mobile */
+            }
+
+            .hero-content {
+                padding: 1.5rem 0.75rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1.25rem;
+                line-height: 1.4;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0.75rem;
+            }
+
+            .product-card {
+                margin: 0 auto;
+                max-width: 320px;
+                transform: none !important; /* Disable parallax on mobile */
+            }
+
+            .product-card:hover {
+                transform: translateY(-5px) !important;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+            .product-info {
+                padding: 1.25rem;
+            }
+
+            .product-title {
+                font-size: 1.1rem;
+            }
+
+            .product-price {
+                font-size: 1.2rem;
+            }
+
+            .btn-add-cart {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-width: 95vw;
+                padding: 1.25rem;
+                margin: 0.5rem;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .review-card {
+                transform: none !important; /* Disable parallax on mobile */
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+
+            .contact-info {
+                order: 2;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-control {
+                padding: 0.75rem;
+                font-size: 1rem; /* Prevent zoom on iOS */
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                height: 100vh;
+            }
+
+            /* Disable parallax effects on mobile for better performance */
+            .hero {
+                transform: none !important;
+            }
+        }
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .container {
+                padding: 0 1rem;
+                max-width: 540px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .product-card {
+                max-width: none;
+            }
+
+            .btn {
+                width: auto;
+            }
+
+            .btn-add-cart {
+                width: 100%;
+            }
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .container {
+                max-width: 720px;
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none; /* Add mobile menu here if needed */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .cart-sidebar {
+                width: 400px;
+                right: -400px;
+            }
+
+            .product-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .modal-content {
+                width: 90%;
+                max-width: 600px;
+            }
+
+            /* Re-enable some parallax effects on tablets */
+            .product-card, .review-card {
+                will-change: transform;
+            }
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 100vh;
+                background-attachment: fixed; /* Re-enable parallax on desktop */
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: center;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .cart-sidebar {
+                width: 400px;
+                right: -400px;
+            }
+
+            .modal-content {
+                width: 80%;
+                max-width: 800px;
+            }
+
+            /* Full parallax effects on desktop */
+            .product-card:hover {
+                transform: translateY(-10px) scale(1.02) !important;
+            }
+
+            .review-card:hover {
+                transform: translateY(-5px) scale(1.01) !important;
+            }
+        }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+
+            .section {
+                padding: 5rem 0;
+            }
+        }
+
+        /* Extra extra large devices (1400px and up) */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
+
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .hero {
+                background-size: cover;
+            }
+        }
+
+        /* Landscape orientation optimizations */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .hero {
+                min-height: 100vh;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .cart-sidebar,
+            .modal,
+            .btn {
+                display: none !important;
+            }
+
+            .hero {
+                background: none;
+                color: #000;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Scroll smooth */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #A0522D, #CD853F);
+        }
+    </style>
+    <script>
+        // Funciones para manejar el inicio de sesión
+        function toggleLoginForm() {
+            const loginForm = document.getElementById('login-form');
+            loginForm.classList.toggle('active');
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'estrella' && password === 'estrella') {
+                const welcomeMessage = document.getElementById('welcome-message');
+                welcomeMessage.textContent = 'Bienvenida estrella';
+                welcomeMessage.style.display = 'block';
+                
+                const loginForm = document.getElementById('login-form');
+                loginForm.classList.remove('active');
+                
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+
+        // Cerrar el formulario de login al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const loginForm = document.getElementById('login-form');
+            const userIcon = document.querySelector('.user-icon');
+            
+            if (!loginForm.contains(event.target) && !userIcon.contains(event.target)) {
+                loginForm.classList.remove('active');
+            }
+        });
+
+        // Funciones para manejar las ventanas modales
+        function openProductModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Cerrar modal con la tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.getElementsByClassName('modal');
+                for (let modal of modals) {
+                    if (modal.style.display === 'flex') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/logo.jpeg" alt="Misk'i Dátil Logo">
+                <div class="logo-text">Misk'i Dátil</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Quienes Somos</a></li>
+                <li><a href="#productos">Catálogo</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span class="welcome-message" id="welcome-message"></span>
+                <div class="user-icon" onclick="toggleLoginForm()">
+                    <span style="font-size: 1.2rem;">👤</span>
+                </div>
+                <div class="login-form" id="login-form">
+                    <input type="text" id="username" placeholder="Usuario">
+                    <input type="password" id="password" placeholder="Contraseña">
+                    <button onclick="login()">Iniciar Sesión</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <span style="font-size: 1.2rem;">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Misk'i Dátil</h1>
+                <p>Dulzura Natural de la Tierra</p>
+                <div class="hero-subtitle">
+                    Tacna – Perú, tierra bendecida por la naturaleza y privilegiada para el cultivo de dátiles orgánicos de la más alta calidad. Cada producto es una expresión auténtica de sabor y bienestar.
+                </div>
+                <a href="#productos" class="btn">Descubre Nuestros Productos</a>
+            </div>
+        </section>
+
+        <section id="nosotros" class="about">
+            <div class="container">
+                <h2 class="section-title">Quienes Somos</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Nuestra Historia</h3>
+                        <p>En Misk'i Dátil - Dulzura Natural de la Tierra somos una empresa tacneña dedicada a la producción de productos orgánicos hechos a base de dátiles. Trabajamos con agricultores locales para ofrecer productos naturales, saludables y de alta calidad que reflejan la riqueza de nuestra tierra. Nuestra pasión es llevar la dulzura auténtica de Tacna a tu mesa, cuidando cada detalle desde la fruta hasta el envase.</p>
+                        
+                        <h3>Misión</h3>
+                        <p>Ofrecer productos orgánicos a base de dátiles de alta calidad, que reflejen la riqueza natural de Tacna, promoviendo un estilo de vida saludable y sostenible, apoyando a los agricultores locales y cuidando cada etapa del proceso, desde la selección hasta el envasado.</p>
+                        
+                        <h3>Visión</h3>
+                        <p>Ser reconocidos como la marca líder en productos gourmet de dátiles orgánicos en Perú, destacando por nuestra calidad, innovación y compromiso con el medio ambiente, llevando la dulzura natural de Tacna a hogares nacionales e internacionales.</p>
+                        <h3>Nuestro Compromiso</h3>
+                        <p>Nuestra pasión es llevar la dulzura auténtica de Tacna a tu mesa, cuidando cada detalle desde la fruta hasta el envase. Desde la cuidadosa selección de los mejores dátiles, pasando por un procesamiento 100% orgánico y natural, hasta un envasado que garantiza frescura y pureza.</p>
+                        
+                        <h3>Línea Gourmet</h3>
+                        <p>Nuestra línea gourmet está diseñada para satisfacer a los paladares más exigentes, ofreciendo una experiencia única que realza y revoluciona el sabor de tus alimentos con la dulzura natural de Tacna.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span>Orgánico</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span>Químicos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Local</span>
+                            <span>Tacna</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Gourmet</span>
+                            <span>Calidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="products">
+            <div class="container">
+                <h2 class="section-title">Catálogo de Productos</h2>
+                <div class="products-grid">
+                    <!-- Mermelada de Dátiles -->
+                    <div class="product-card">
+                        <img src="images/mermelada.jpeg" alt="Mermelada de Dátiles" class="product-image" loading="lazy" onclick="openProductModal('mermelada-modal')">
+                        <div class="product-info">
+                            <h3 class="product-title">Mermelada de Dátiles</h3>
+                            <p class="product-price">S/ 13.50</p>
+                            <button class="btn-add-cart" onclick="addToCart('Mermelada de Dátiles', 13.50)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Mermelada -->
+                    <div id="mermelada-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('mermelada-modal')">&times;</span>
+                            <h2 class="modal-title">Mermelada de Dátiles</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>200 g de dátiles</li>
+                                    <li>1/2 cucharadita de canela en polvo</li>
+                                    <li>1 cucharadita de extracto de vainilla</li>
+                                    <li>1 cucharadita de agua</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios Nutricionales</h3>
+                                <ul>
+                                    <li>Naturalmente dulce, sin azúcar refinada</li>
+                                    <li>Alta en fibra, ideal para mejorar la digestión</li>
+                                    <li>Fuente de potasio, magnesio y hierro</li>
+                                    <li>Rica en antioxidantes</li>
+                                    <li>Energía natural</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Endulzante de Dátiles -->
+                    <div class="product-card">
+                        <img src="images/endulzante.jpeg" alt="Endulzante de Dátiles" class="product-image" loading="lazy" onclick="openProductModal('endulzante-modal')">
+                        <div class="product-info">
+                            <h3 class="product-title">Endulzante de Dátiles</h3>
+                            <p class="product-price">S/ 3.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Endulzante de Dátiles', 3.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Endulzante -->
+                    <div id="endulzante-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('endulzante-modal')">&times;</span>
+                            <h2 class="modal-title">Endulzante de Dátiles</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>200 gr de dátiles</li>
+                                    <li>5 cucharaditas de canela en polvo</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios Nutricionales</h3>
+                                <ul>
+                                    <li>100% natural, sin aditivos ni conservantes</li>
+                                    <li>Endulzante saludable</li>
+                                    <li>Fuente natural de energía</li>
+                                    <li>Rico en fibra</li>
+                                    <li>Aporte de potasio y hierro</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tiramisú -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/tiramisu.jpeg" alt="Tiramisú" class="product-image" loading="lazy" onclick="openProductModal('tiramisu-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Tiramisú</h3>
+                            <p class="product-price">S/ 14.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Tiramisú', 14.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Tiramisú -->
+                    <div id="tiramisu-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('tiramisu-modal')">&times;</span>
+                            <h2 class="modal-title">Tiramisú</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>100 gm almendras</li>
+                                    <li>Galleta de avena</li>
+                                    <li>50 gm quinua</li>
+                                    <li>5 dátiles</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios Nutricionales</h3>
+                                <ul>
+                                    <li>Fuente natural de energía</li>
+                                    <li>Rico en fibra y proteína vegetal</li>
+                                    <li>Con quinua andina</li>
+                                    <li>Sin azúcares añadidos</li>
+                                    <li>Grasas saludables</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trufas de Dátil y Almendra -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/trufas.jpeg" alt="Trufas de Dátil y Almendra" class="product-image" loading="lazy" onclick="openProductModal('trufas-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Trufas de Dátil y Almendra</h3>
+                            <p class="product-price">S/ 5.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Trufas de Dátil y Almendra', 5.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Trufas -->
+                    <div id="trufas-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('trufas-modal')">&times;</span>
+                            <h2 class="modal-title">Trufas de Dátil y Almendra</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>250 gm de dátiles</li>
+                                    <li>500 gm de harina de almendras</li>
+                                    <li>Cacao</li>
+                                    <li>Aceite de coco</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios Nutricionales</h3>
+                                <ul>
+                                    <li>Dulzura 100% natural</li>
+                                    <li>Alto en energía saludable</li>
+                                    <li>Con grasas buenas</li>
+                                    <li>Rico en antioxidantes</li>
+                                    <li>Apto para veganos y sin gluten</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chocolate de Dubai -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/chocolate.jpeg" alt="Chocolate de Dubai" class="product-image" loading="lazy" onclick="openProductModal('chocolate-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Chocolate de Dubai</h3>
+                            <p class="product-price">S/ 7.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Chocolate de Dubai', 7.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Chocolate -->
+                    <div id="chocolate-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('chocolate-modal')">&times;</span>
+                            <h2 class="modal-title">Chocolate de Dubai</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>Chocolate negro y blanco</li>
+                                    <li>Quinua</li>
+                                    <li>Pistachos</li>
+                                    <li>Dátiles</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios Nutricionales</h3>
+                                <ul>
+                                    <li>Superalimento con toque gourmet</li>
+                                    <li>Mezcla perfecta de dulce y crocante</li>
+                                    <li>Aporte de fibra y proteína</li>
+                                    <li>Satisface sin culpa</li>
+                                    <li>Ingredientes naturales y selectos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alfajores -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/alfagores.jpeg" alt="Alfajores" class="product-image" loading="lazy" onclick="openProductModal('alfajores-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Alfajores</h3>
+                            <p class="product-price">S/ 8.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Alfajores', 8.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Alfajores -->
+                    <div id="alfajores-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('alfajores-modal')">&times;</span>
+                            <h2 class="modal-title">Alfajores</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>300 g de dátiles</li>
+                                    <li>250 g almendras</li>
+                                    <li>250 g coco rallado</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios Nutricionales</h3>
+                                <ul>
+                                    <li>Dulzura natural sin azúcar añadida</li>
+                                    <li>Fuente de energía limpia y sostenida</li>
+                                    <li>Ricos en fibra y antioxidantes</li>
+                                    <li>Aporte de grasas buenas</li>
+                                    <li>Sin harinas ni conservantes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chocolate energizante -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/Chocolate energizante.jpeg" alt="Chocolate energizante" class="product-image" loading="lazy" onclick="openProductModal('chocolate-energizante-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Chocolate energizante</h3>
+                            <p class="product-price">S/ 18.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Chocolate energizante', 18.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Chocolate energizante -->
+                    <div id="chocolate-energizante-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('chocolate-energizante-modal')">&times;</span>
+                            <h2 class="modal-title">Chocolate energizante</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>300gm de chocolate negro</li>
+                                    <li>90gm de dátiles</li>
+                                    <li>4 cucharadas de quinua</li>
+                                    <li>50gm de pistachos</li>
+                                </ul>
+                                <p><strong>Peso neto:</strong> 250 gm</p>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios</h3>
+                                <ul>
+                                    <li>Energía natural y sostenida gracias a los dátiles y la quinua</li>
+                                    <li>Antioxidantes del chocolate negro y pistachos que protegen al corazón</li>
+                                    <li>Fuente de fibra que favorece la digestión</li>
+                                    <li>Proteínas vegetales de la quinua y los pistachos, ideales para recuperación muscular</li>
+                                    <li>Vitaminas y minerales: magnesio, hierro, potasio, zinc y vitamina E</li>
+                                    <li>Grasas saludables de los pistachos, que cuidan la salud cardiovascular</li>
+                                    <li>Sin azúcar refinada, endulzado naturalmente con dátiles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutritejas -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/Nutritejas.jpeg" alt="Nutritejas" class="product-image" loading="lazy" onclick="openProductModal('nutritejas-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Nutritejas</h3>
+                            <p class="product-price">S/ 12.00</p>
+                            <button class="btn-add-cart" onclick="addToCart('Nutritejas', 12.00)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Nutritejas -->
+                    <div id="nutritejas-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('nutritejas-modal')">&times;</span>
+                            <h2 class="modal-title">Nutritejas</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>150gm de chocolate negro</li>
+                                    <li>7gm de maní</li>
+                                    <li>60gm de dátiles</li>
+                                    <li>7gm de castaña</li>
+                                    <li>7gm de almendras</li>
+                                    <li>7gm de pecanas</li>
+                                </ul>
+                                <p><strong>Peso neto:</strong> 110gm</p>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios</h3>
+                                <ul>
+                                    <li>Energía natural gracias a los dátiles y frutos secos</li>
+                                    <li>Antioxidantes del chocolate negro, dátiles y frutos secos</li>
+                                    <li>Fibra y proteínas vegetales, que apoyan la digestión y saciedad</li>
+                                    <li>Vitaminas y minerales (magnesio, potasio, hierro, calcio, vitamina E)</li>
+                                    <li>Grasas saludables que protegen el corazón y el cerebro</li>
+                                    <li>Sin azúcar refinada, dulzor natural de los dátiles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Infusión de Dátiles -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="images/Infusion de Datiles.jpeg" alt="Infusión de Dátiles" class="product-image" loading="lazy" onclick="openProductModal('infusion-datiles-modal')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Infusión de Dátiles</h3>
+                            <p class="product-price">S/ 8.50</p>
+                            <button class="btn-add-cart" onclick="addToCart('Infusión de Dátiles', 8.50)">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Infusión de Dátiles -->
+                    <div id="infusion-datiles-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" onclick="closeModal('infusion-datiles-modal')">&times;</span>
+                            <h2 class="modal-title">Infusión de Dátiles</h2>
+                            <div class="modal-section">
+                                <h3>Ingredientes</h3>
+                                <ul>
+                                    <li>Pepas de dátiles</li>
+                                    <li>Canela molida</li>
+                                </ul>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Descripción</h3>
+                                <p>Infusión única y exótica hecho con dátiles selectos. Nuestro café de dátil es una mezcla perfecta de sabores dulces y terrosos, con notas de caramelo y frutas secas. Sin cafeína, perfecto para disfrutar en cualquier momento del día.</p>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Beneficios</h3>
+                                <ul>
+                                    <li>Rico en nutrientes: Contiene proteínas, grasas saludables, minerales como potasio, magnesio, hierro y vitaminas A, B6 y C</li>
+                                    <li>Aporta antioxidantes que ayudan a proteger las células y el sistema inmunológico</li>
+                                    <li>Mejora la digestión: Su fibra ayuda a regular el sistema digestivo y puede favorecer la eliminación de parásitos intestinales</li>
+                                    <li>Propiedades antiinflamatorias: La canela molida añade beneficios antiinflamatorios y promueve la circulación sanguínea</li>
+                                    <li>Efecto energizante natural: Debido a su contenido en azúcares naturales como glucosa y fructosa, proporciona energía sostenida sin picos de azúcar</li>
+                                    <li>Apoya la salud ósea y vista: Por su aporte de calcio y vitamina A, contribuye a la fortaleza de huesos y visión</li>
+                                    <li>Antioxidante y protector cardiovascular: Sus antioxidantes ayudan a reducir el colesterol malo y protegen el organismo del daño hepático y renal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="opiniones" class="reviews">
+            <div class="container">
+                <h2 class="section-title">Opiniones de Nuestros Clientes</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">MC</div>
+                            <div class="review-info">
+                                <h4>Maria Castillo</h4>
+                                <div class="review-stars">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <div class="review-date">Hace 2 semanas</div>
+                            </div>
+                        </div>
+                        <p>"Los productos son increíblemente naturales y saludables. La mejor alternativa para endulzar que he encontrado. La calidad es excepcional y el sabor auténtico."</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">JR</div>
+                            <div class="review-info">
+                                <h4>Juan Ramirez</h4>
+                                <div class="review-stars">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <div class="review-date">Hace 1 mes</div>
+                            </div>
+                        </div>
+                        <p>"El endulzante natural es perfecto para mi dieta. Excelente sabor y calidad garantizada. Los ingredientes naturales se notan en cada producto."</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">LP</div>
+                            <div class="review-info">
+                                <h4>Laura Gonzales</h4>
+                                <div class="review-stars">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <div class="review-date">Hace 3 días</div>
+                            </div>
+                        </div>
+                        <p>"Los snacks son perfectos para mis hijos. Saludables y deliciosos, ¡no puedo pedir más! El packaging es hermoso y la entrega siempre puntual."</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">CF</div>
+                            <div class="review-info">
+                                <h4>Carlos Fernández</h4>
+                                <div class="review-stars">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <div class="review-date">Hace 1 semana</div>
+                            </div>
+                        </div>
+                        <p>"Productos artesanales de primera calidad. La mermelada de dátiles es mi favorita para los desayunos. Excelente relación calidad-precio."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="beneficios" class="benefits">
+            <div class="container">
+                <h2 class="section-title">Beneficios de Nuestros Productos</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌿</div>
+                        <h3>100% Natural</h3>
+                        <p>Productos elaborados sin aditivos químicos ni conservantes artificiales</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💪</div>
+                        <h3>Saludable</h3>
+                        <p>Rico en fibra, vitaminas y minerales esenciales para tu bienestar</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌎</div>
+                        <h3>Sostenible</h3>
+                        <p>Producción responsable que cuida el medio ambiente</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">❤️</div>
+                        <h3>Bienestar</h3>
+                        <p>Ideal para mantener una dieta equilibrada y un estilo de vida saludable</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contáctanos</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>¿Tienes alguna pregunta?</h3>
+                        <p>Estamos aquí para ayudarte. Contáctanos por cualquiera de estos medios:</p>
+                        <div class="contact-details">
+                            <p>📞 Teléfono: +51 952 123 456</p>
+                            <p>📧 Email: miskidatil@gmail.com</p>
+                            <p>📍 Dirección: Av. Principal 123, Tacna - Perú</p>
+                        </div>
+                        <div class="social-media">
+                            <h3>Síguenos en redes sociales</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link">Facebook</a>
+                                <a href="#" class="social-link">Instagram</a>
+                                <a href="#" class="social-link">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName">Nombre Completo *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Ingresa tu nombre completo" required minlength="2">
+                            <div class="form-error" id="fullNameError"></div>
+                            <div class="form-success" id="fullNameSuccess"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            <div class="form-error" id="emailError"></div>
+                            <div class="form-success" id="emailSuccess"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" required minlength="5">
+                            <div class="form-error" id="subjectError"></div>
+                            <div class="form-success" id="subjectSuccess"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required minlength="10"></textarea>
+                            <div class="form-error" id="messageError"></div>
+                            <div class="form-success" id="messageSuccess"></div>
+                        </div>
+                        <button type="submit" class="btn" id="submitBtn">Enviar Mensaje</button>
+                        <div class="form-loading" id="formLoading">
+                            <div class="loading-spinner"></div>
+                            <span>Enviando mensaje...</span>
+                        </div>
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Misk'i Dátil</h4>
+                        <p>Dulzura Natural de la Tierra</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Enlaces Rápidos</h4>
+                        <a href="#inicio">Inicio</a><br>
+                        <a href="#nosotros">Quienes Somos</a><br>
+                        <a href="#productos">Catálogo</a><br>
+                        <a href="#beneficios">Beneficios</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contacto</h4>
+                        <p>📞 +51 952 123 456</p>
+                        <p>📧 miskidatil@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Misk'i Dátil. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-content" id="cart-content"></div>
+        <div class="cart-total">
+            <h3>Total</h3>
+            <div class="total-amount" id="cart-total">S/ 0.00</div>
+            <div class="payment-methods">
+                <h4>Métodos de Pago</h4>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="yape" checked>
+                        <span class="payment-icon">📱</span>
+                        <span>Yape</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="plin">
+                        <span class="payment-icon">📱</span>
+                        <span>Plin</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card">
+                        <span class="payment-icon">💳</span>
+                        <span>Tarjeta</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cash">
+                        <span class="payment-icon">💵</span>
+                        <span>Efectivo</span>
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="checkout()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script>
+        // Efecto de scroll en el header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        let cart = [];
+        let cartTotal = 0;
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCart();
+            toggleCart();
+        }
+
+        function updateCart() {
+            const cartContent = document.getElementById('cart-content');
+            const cartCount = document.getElementById('cart-count');
+            cartContent.innerHTML = '';
+            cartTotal = 0;
+
+            const groupedItems = {};
+            cart.forEach(item => {
+                if (groupedItems[item.name]) {
+                    groupedItems[item.name].quantity++;
+                    groupedItems[item.name].total += item.price;
+                } else {
+                    groupedItems[item.name] = {
+                        price: item.price,
+                        quantity: 1,
+                        total: item.price
+                    };
+                }
+                cartTotal += item.price;
+            });
+
+            Object.entries(groupedItems).forEach(([name, details]) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${name}</div>
+                        <div class="cart-item-price">S/ ${details.price.toFixed(2)} x ${details.quantity}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn" onclick="updateQuantity('${name}', -1)">-</button>
+                            <span>${details.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity('${name}', 1)">+</button>
+                        </div>
+                    </div>
+                `;
+                cartContent.appendChild(itemDiv);
+            });
+
+            document.getElementById('cart-total').textContent = `S/ ${cartTotal.toFixed(2)}`;
+            cartCount.textContent = cart.length;
+        }
+
+        function updateQuantity(productName, change) {
+            if (change < 0) {
+                const index = cart.findIndex(item => item.name === productName);
+                if (index !== -1) {
+                    cart.splice(index, 1);
+                }
+            } else {
+                const item = cart.find(item => item.name === productName);
+                if (item) {
+                    cart.push({ name: productName, price: item.price });
+                }
+            }
+            updateCart();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-sidebar').classList.toggle('active');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            const total = cartTotal.toFixed(2);
+            const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+            let paymentMethod = '';
+            switch(selectedPayment) {
+                case 'yape':
+                    paymentMethod = 'Yape';
+                    break;
+                case 'plin':
+                    paymentMethod = 'Plin';
+                    break;
+                case 'card':
+                    paymentMethod = 'Tarjeta';
+                    break;
+                case 'cash':
+                    paymentMethod = 'Efectivo';
+                    break;
+            }
+            alert(`¡Pago realizado con éxito mediante ${paymentMethod}!\nTotal pagado: S/ ${total}\nGracias por tu compra.`);
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+
+        function openAuthModal() {
+            document.getElementById('auth-modal').classList.add('active');
+        }
+
+        // Animaciones de scroll
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            // Añadir clases de animación a elementos específicos
+            document.querySelectorAll('.section-title').forEach((el, index) => {
+                el.classList.add('animate-on-scroll');
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.product-card').forEach((el, index) => {
+                if (index % 2 === 0) {
+                    el.classList.add('animate-slide-left');
+                } else {
+                    el.classList.add('animate-slide-right');
+                }
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.review-card').forEach((el, index) => {
+                el.classList.add('animate-scale');
+                el.style.animationDelay = `${index * 0.2}s`;
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.benefit-card').forEach((el, index) => {
+                el.classList.add('animate-on-scroll');
+                el.style.animationDelay = `${index * 0.3}s`;
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.about-stat').forEach((el, index) => {
+                el.classList.add('animate-scale');
+                el.style.animationDelay = `${index * 0.2}s`;
+                observer.observe(el);
+            });
+
+            // Animación para el formulario de contacto
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.classList.add('animate-slide-right');
+                observer.observe(contactForm);
+            }
+
+            const contactInfo = document.querySelector('.contact-info');
+            if (contactInfo) {
+                contactInfo.classList.add('animate-slide-left');
+                observer.observe(contactInfo);
+            }
+        }
+
+        // Smooth scroll para los enlaces de navegación
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Contact Form Validation
+        function initContactForm() {
+            const form = document.getElementById('contactForm');
+            const fields = {
+                fullName: document.getElementById('fullName'),
+                email: document.getElementById('email'),
+                subject: document.getElementById('subject'),
+                message: document.getElementById('message')
+            };
+
+            const errors = {
+                fullName: document.getElementById('fullNameError'),
+                email: document.getElementById('emailError'),
+                subject: document.getElementById('subjectError'),
+                message: document.getElementById('messageError')
+            };
+
+            const success = {
+                fullName: document.getElementById('fullNameSuccess'),
+                email: document.getElementById('emailSuccess'),
+                subject: document.getElementById('subjectSuccess'),
+                message: document.getElementById('messageSuccess')
+            };
+
+            const submitBtn = document.getElementById('submitBtn');
+            const formLoading = document.getElementById('formLoading');
+            const formMessage = document.getElementById('formMessage');
+
+            // Validation rules
+            const validationRules = {
+                fullName: {
+                    required: true,
+                    minLength: 2,
+                    pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                    messages: {
+                        required: 'El nombre es obligatorio',
+                        minLength: 'El nombre debe tener al menos 2 caracteres',
+                        pattern: 'El nombre solo puede contener letras y espacios'
+                    }
+                },
+                email: {
+                    required: true,
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    messages: {
+                        required: 'El correo electrónico es obligatorio',
+                        pattern: 'Ingresa un correo electrónico válido'
+                    }
+                },
+                subject: {
+                    required: true,
+                    minLength: 5,
+                    maxLength: 100,
+                    messages: {
+                        required: 'El asunto es obligatorio',
+                        minLength: 'El asunto debe tener al menos 5 caracteres',
+                        maxLength: 'El asunto no puede exceder 100 caracteres'
+                    }
+                },
+                message: {
+                    required: true,
+                    minLength: 10,
+                    maxLength: 1000,
+                    messages: {
+                        required: 'El mensaje es obligatorio',
+                        minLength: 'El mensaje debe tener al menos 10 caracteres',
+                        maxLength: 'El mensaje no puede exceder 1000 caracteres'
+                    }
+                }
+            };
+
+            // Validate field function
+            function validateField(fieldName, value) {
+                const rules = validationRules[fieldName];
+                const errorElement = errors[fieldName];
+                const successElement = success[fieldName];
+
+                // Clear previous messages
+                errorElement.textContent = '';
+                errorElement.classList.remove('show');
+                successElement.textContent = '';
+                successElement.classList.remove('show');
+
+                // Required validation
+                if (rules.required && (!value || value.trim() === '')) {
+                    showError(errorElement, rules.messages.required);
+                    return false;
+                }
+
+                // Skip other validations if field is empty and not required
+                if (!value || value.trim() === '') {
+                    return true;
+                }
+
+                // Min length validation
+                if (rules.minLength && value.length < rules.minLength) {
+                    showError(errorElement, rules.messages.minLength);
+                    return false;
+                }
+
+                // Max length validation
+                if (rules.maxLength && value.length > rules.maxLength) {
+                    showError(errorElement, rules.messages.maxLength);
+                    return false;
+                }
+
+                // Pattern validation
+                if (rules.pattern && !rules.pattern.test(value)) {
+                    showError(errorElement, rules.messages.pattern);
+                    return false;
+                }
+
+                // Show success message
+                showSuccess(successElement, '✓ Válido');
+                return true;
+            }
+
+            function showError(element, message) {
+                element.textContent = message;
+                element.classList.add('show');
+            }
+
+            function showSuccess(element, message) {
+                element.textContent = message;
+                element.classList.add('show');
+            }
+
+            // Add real-time validation to each field
+            Object.keys(fields).forEach(fieldName => {
+                const field = fields[fieldName];
+                
+                field.addEventListener('blur', () => {
+                    validateField(fieldName, field.value);
+                });
+
+                field.addEventListener('input', () => {
+                    // Clear errors on input
+                    const errorElement = errors[fieldName];
+                    if (errorElement.classList.contains('show')) {
+                        setTimeout(() => {
+                            validateField(fieldName, field.value);
+                        }, 500);
+                    }
+                });
+            });
+
+            // Form submission
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Validate all fields
+                let isValid = true;
+                Object.keys(fields).forEach(fieldName => {
+                    const field = fields[fieldName];
+                    if (!validateField(fieldName, field.value)) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    showFormMessage('Por favor, corrige los errores antes de enviar.', 'error');
+                    return;
+                }
+
+                // Show loading state
+                submitBtn.disabled = true;
+                formLoading.classList.add('show');
+                formMessage.classList.remove('show');
+
+                // Simulate form submission (replace with actual API call)
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Success
+                    showFormMessage('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
+                    form.reset();
+                    
+                    // Clear all validation messages
+                    Object.keys(errors).forEach(fieldName => {
+                        errors[fieldName].classList.remove('show');
+                        success[fieldName].classList.remove('show');
+                    });
+                    
+                } catch (error) {
+                    showFormMessage('Error al enviar el mensaje. Por favor, inténtalo de nuevo.', 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    formLoading.classList.remove('show');
+                }
+            });
+
+            function showFormMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = `form-message ${type} show`;
+                
+                // Auto-hide after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.remove('show');
+                }, 5000);
+            }
+        }
+
+        // Performance optimizations
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Simplified scroll effects
+        function initSimpleScrollEffects() {
+            // Simple scroll progress indicator
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: linear-gradient(90deg, #8B4513, #D2691E);
+                z-index: 9999;
+            `;
+            document.body.appendChild(progressBar);
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const scrollTop = document.documentElement.scrollTop;
+                        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        const scrollPercent = (scrollTop / scrollHeight) * 100;
+                        progressBar.style.width = scrollPercent + '%';
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        // Image optimization and lazy loading fallback
+        function initImageOptimization() {
+            // Add intersection observer for images without native lazy loading support
+            if ('loading' in HTMLImageElement.prototype) {
+                // Native lazy loading is supported
+                return;
+            }
+            
+            // Fallback for browsers without native lazy loading
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Preload critical images on user interaction
+        function preloadCriticalImages() {
+            const criticalImages = [
+                'images/mermelada.jpeg',
+                'images/endulzante.jpeg',
+                'images/tiramisu.jpeg'
+            ];
+            
+            // Preload on first user interaction
+            const preloadOnInteraction = () => {
+                criticalImages.forEach(src => {
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = src;
+                    document.head.appendChild(link);
+                });
+                
+                // Remove event listeners after first interaction
+                document.removeEventListener('mouseenter', preloadOnInteraction);
+                document.removeEventListener('touchstart', preloadOnInteraction);
+            };
+            
+            document.addEventListener('mouseenter', preloadOnInteraction, { once: true });
+            document.addEventListener('touchstart', preloadOnInteraction, { once: true, passive: true });
+        }
+
+        // Reduce layout thrashing
+        function optimizeAnimations() {
+            // Use transform and opacity for animations instead of changing layout properties
+            const style = document.createElement('style');
+            style.textContent = `
+                .product-card {
+                    will-change: transform;
+                }
+                .product-card:hover {
+                    transform: translateY(-15px) scale(1.02) translateZ(0);
+                }
+                .review-card {
+                    will-change: transform;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Inicializar todas las funciones cuando se carga la página
+        // Mobile detection and responsive optimizations
+        function initResponsiveOptimizations() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            if (isMobile || isTouch) {
+                // Disable parallax on mobile for better performance
+                document.body.classList.add('mobile-device');
+                
+                // Add touch-friendly interactions
+                const cards = document.querySelectorAll('.product-card, .review-card');
+                cards.forEach(card => {
+                    card.addEventListener('touchstart', function() {
+                        this.classList.add('touch-active');
+                    });
+                    
+                    card.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.classList.remove('touch-active');
+                        }, 150);
+                    });
+                });
+                
+                // Optimize scroll performance on mobile
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    document.body.classList.add('scrolling');
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        document.body.classList.remove('scrolling');
+                    }, 150);
+                }, { passive: true });
+            }
+            
+            // Viewport height fix for mobile browsers
+            function setVH() {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setVH();
+            window.addEventListener('resize', setVH);
+            window.addEventListener('orientationchange', () => {
+                setTimeout(setVH, 100);
+            });
+        }
+
+        // Enhanced image loading for different screen sizes
+        function initResponsiveImages() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const screenWidth = window.innerWidth;
+                        
+                        // Load appropriate image size based on screen width
+                        if (screenWidth <= 576) {
+                            img.src = img.dataset.srcSmall || img.dataset.src;
+                        } else if (screenWidth <= 768) {
+                            img.src = img.dataset.srcMedium || img.dataset.src;
+                        } else {
+                            img.src = img.dataset.src;
+                        }
+                        
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initResponsiveOptimizations();
+            initScrollAnimations();
+            initSmoothScroll();
+            initContactForm();
+            initSimpleScrollEffects();
+            initResponsiveImages();
+        });
+    </script>
